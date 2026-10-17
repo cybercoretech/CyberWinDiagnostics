@@ -3,7 +3,7 @@
 > Portable Windows 10 diagnostic runbook and toolkit.
 > Boot it, plug it, run it, walk away with a report.
 
-**Project site:** [CyberWinDiagnostics for Windows](https://cybercore-tech.github.io/CyberWinDiagnostics/) · [Source repository](https://github.com/cybercore-tech/CyberWinDiagnostics)
+**Project site:** [CyberWinDiagnostics for Windows](https://cybercoretech.github.io/CyberWinDiagnostics/) · [Source repository](https://github.com/cybercoretech/CyberWinDiagnostics)
 
 > **Personal USB build status (2026-09-28):** the USB includes portable Notepad++,
 > 7-Zip Extra, CrystalDiskInfo, and a local Sysinternals Suite copy. It also
@@ -99,13 +99,13 @@ the Windows toolkit files on the drive; the PowerShell collector itself runs
 on Windows. No `sudo` is used.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/cybercore-tech/CyberWinDiagnostics/main/install.sh | sh -s --
+curl -fsSL https://raw.githubusercontent.com/cybercoretech/CyberWinDiagnostics/main/install.sh | sh -s --
 ```
 
 Choose a destination explicitly:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/cybercore-tech/CyberWinDiagnostics/main/install.sh | sh -s -- --dest "/path/to/mounted/USB/CyberWinDiagnostics"
+curl -fsSL https://raw.githubusercontent.com/cybercoretech/CyberWinDiagnostics/main/install.sh | sh -s -- --dest "/path/to/mounted/USB/CyberWinDiagnostics"
 ```
 
 The installer needs `curl`, `unzip`, and `sha256sum` (Linux) or `shasum`

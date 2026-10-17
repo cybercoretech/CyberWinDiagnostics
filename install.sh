@@ -2,7 +2,7 @@
 # Install/update the source-only CyberWinDiagnostics folder on a USB or disk.
 set -eu
 
-REPO_BASE='https://raw.githubusercontent.com/cybercore-tech/CyberWinDiagnostics/main'
+REPO_BASE='https://raw.githubusercontent.com/cybercoretech/CyberWinDiagnostics/main'
 DESTINATION='./CyberWinDiagnostics'
 UPDATE=0
 
