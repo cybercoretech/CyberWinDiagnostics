@@ -1,7 +1,6 @@
 """Small static checks for the CyberWinDiagnostics GitHub Pages site."""
 
 from html.parser import HTMLParser
-import json
 from pathlib import Path
 import re
 import sys
@@ -37,20 +36,14 @@ def fail(message):
     raise SystemExit(1)
 
 
-registry = json.loads((SITE / "data/themes.json").read_text(encoding="utf-8"))
-families = registry["families"]
-names = [name for family in families.values() for name in family]
-if len(names) != 72 or len(set(names)) != 72:
-    fail(f"expected 72 unique theme entries, found {len(names)}")
-if set(names) != set(registry["themes"]):
-    fail("theme family registry and palette registry do not contain the same names")
-required_roles = {"bg", "white", "acid_green", "hot_pink", "purple", "cyan", "orange", "red", "panel", "line", "muted"}
-for name, palette in registry["themes"].items():
-    if set(palette) != required_roles:
-        fail(f"{name} has a missing or unexpected color role")
-    for role, color in palette.items():
-        if not re.fullmatch(r"[0-9a-fA-F]{6}", color):
-            fail(f"{name}.{role} is not a six-digit RGB hex value")
+# Themes come from the universal Cybercore chooser (600-theme registry + 12
+# signature mashups, read live from cybercoretech.github.io), not a local file.
+source = (SITE / "index.html").read_text(encoding="utf-8")
+for needle in ("<cybercore-theme-chooser", "https://cybercoretech.github.io/kit/chooser.js", "https://cybercoretech.github.io/kit/chooser.css"):
+    if needle not in source:
+        fail(f"universal theme chooser is not wired in: missing {needle}")
+if (SITE / "data/themes.json").exists():
+    fail("docs/data/themes.json is obsolete; themes load from the shared registry")
 
 previews = list((SITE / "assets/previews").glob("*.svg"))
 if len(previews) != 8:
@@ -79,4 +72,4 @@ legacy_html = legacy_html.replace('src="app.js"', 'src="docs/app.js"')
 if (ROOT / "index.html").read_text(encoding="utf-8") != legacy_html:
     fail("root Pages compatibility index is stale; regenerate it from docs/index.html")
 
-print("PASS: 72 themes, 8 previews, accessible/local assets, and root Pages compatibility copy")
+print("PASS: universal theme chooser, 8 previews, accessible/local assets, and root Pages compatibility copy")
