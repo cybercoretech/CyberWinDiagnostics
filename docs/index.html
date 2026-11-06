@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="install.css">
+  <link rel="stylesheet" href="https://cybercoretech.github.io/kit/chooser.css">
+  <script>window.SITE = Object.assign(window.SITE || {}, {"defaultTheme": "cyberpunk-neon"});</script>
+  <script type="module" src="https://cybercoretech.github.io/kit/chooser.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -19,15 +22,7 @@
     <a class="brand" href="#top" aria-label="CyberWinDiagnostics home"><span class="brand-mark"><b></b><b></b><b></b><b></b></span><span>CYBER<span class="brand-light">WIN</span><small>DIAGNOSTICS / FIELD KIT</small></span></a>
     <nav class="main-nav" aria-label="Main navigation"><a href="#capabilities">Capabilities</a><a href="#screens">Field screens</a><a href="#workflow">Workflow</a></nav>
     <div class="header-actions">
-      <div class="theme-picker">
-        <button class="theme-trigger" id="themeTrigger" type="button" aria-haspopup="dialog" aria-expanded="false"><span class="theme-icon">◉</span><span id="themeCurrent">CYBERPUNK NEON</span><span class="chevron">⌄</span></button>
-        <section class="theme-menu" id="themeMenu" role="dialog" aria-label="Choose a Cybercore theme" hidden>
-          <div class="theme-menu-head"><div><small>CYBERCORE PALETTE</small><strong>Pick your field colors</strong></div><span class="theme-total">72 THEMES</span></div>
-          <label class="theme-search"><span>⌕</span><input id="themeSearch" type="search" placeholder="Find a theme…" autocomplete="off"><kbd>/</kbd></label>
-          <div class="theme-options" id="themeOptions"></div>
-          <div class="theme-menu-foot">Theme choice stays in this browser <span>ESC TO CLOSE</span></div>
-        </section>
-      </div>
+      <div class="theme-picker"><cybercore-theme-chooser adopt><button class="theme-trigger" id="themeTrigger" type="button">Cyberpunk Neon</button></cybercore-theme-chooser></div>
       <a class="github-link" href="https://github.com/cybercoretech/CyberWinDiagnostics" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     </div>
