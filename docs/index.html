@@ -15,6 +15,176 @@
   <link rel="stylesheet" href="https://cybercoretech.github.io/kit/chooser.css">
   <script>window.SITE = Object.assign(window.SITE || {}, {"defaultTheme": "cyberpunk-neon"});</script>
   <script type="module" src="https://cybercoretech.github.io/kit/chooser.js"></script>
+  <style id="cc-mobile-first">
+/* Mobile floor (phones + tablets): readable text and finger-sized targets.
+   Generated per range from what renders under 11px / 24px; desktop untouched. */
+@media (max-width: 600px) {
+  small,
+  div.eyebrow,
+  a.button,
+  div.quick-install-head > span,
+  div.quick-install-head > a,
+  #copyInstall,
+  div.quick-install-foot > span,
+  #copyStatus,
+  div.hero-proof > span,
+  div.hero-proof > span > b,
+  div.window-app-icon,
+  div.window-titlebar > span,
+  div.terminal-overline > span,
+  span.terminal-live,
+  p.terminal-label,
+  div > b,
+  div.terminal-steps > div > span,
+  div > i,
+  div.terminal-footer > span,
+  div.floating-stamp > span > b,
+  section.signal-rail > div > span,
+  p.eyebrow,
+  div.cap-top > span,
+  div.cap-top > b,
+  article.cap-card > p,
+  div.cap-foot,
+  div.screen-caption > span,
+  div.screen-caption > p,
+  p.preview-note,
+  article > span,
+  article > div > p,
+  div.mini-titlebar > span,
+  div.summary-file > p,
+  p > span,
+  p.summary-result > b,
+  div.mini-status,
+  div.safety-strip > div > p,
+  div.safety-strip > a,
+  div.cta-coordinates,
+  a.footer-brand,
+  footer.footer > span { font-size: 11px !important; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+  small,
+  a.github-link,
+  div.eyebrow,
+  a.button,
+  div.quick-install-head > span,
+  div.quick-install-head > a,
+  #copyInstall,
+  div.quick-install-foot > span,
+  #copyStatus,
+  div.hero-proof > span,
+  div.hero-proof > span > b,
+  div.window-app-icon,
+  div.window-titlebar > span,
+  div.terminal-overline > span,
+  span.terminal-live,
+  p.terminal-label,
+  div > b,
+  div.terminal-steps > div > span,
+  div > i,
+  div.terminal-footer > span,
+  div.floating-stamp > span > b,
+  div.hero-coordinate,
+  div.hero-bottom > span,
+  span.scroll-cue,
+  section.signal-rail > div > span,
+  p.eyebrow,
+  div.cap-top > span,
+  div.cap-top > b,
+  div.cap-foot,
+  div.screen-caption > span,
+  p.preview-note,
+  article > span,
+  div.workflow-steps > article > div > p,
+  div.mini-titlebar > span,
+  div.summary-file > p,
+  p > span,
+  p.summary-result > b,
+  div.mini-status,
+  div.safety-strip > div > p,
+  div.safety-strip > a,
+  div.cta-coordinates,
+  a.footer-brand,
+  footer.footer > span { font-size: 11px !important; }
+}
+@media (min-width: 861px) and (max-width: 1024px) {
+  small,
+  a.github-link,
+  div.eyebrow,
+  a.button,
+  div.quick-install-head > span,
+  div.quick-install-head > a,
+  #copyInstall,
+  div.quick-install-foot > span,
+  #copyStatus,
+  div.hero-proof > span,
+  div.hero-proof > span > b,
+  div.window-app-icon,
+  div.window-titlebar > span,
+  div.terminal-overline > span,
+  span.terminal-live,
+  p.terminal-label,
+  div > b,
+  div.terminal-steps > div > span,
+  div > i,
+  div.terminal-footer > span,
+  div.floating-stamp > span > b,
+  div.hero-coordinate,
+  div.hero-bottom > span,
+  span.scroll-cue,
+  section.signal-rail > div > span,
+  p.eyebrow,
+  div.cap-top > span,
+  div.cap-top > b,
+  div.cap-foot,
+  div.screen-caption > span,
+  p.preview-note,
+  article > span,
+  div.workflow-steps > article > div > p,
+  div.mini-titlebar > span,
+  div.summary-file > p,
+  p > span,
+  p.summary-result > b,
+  div.mini-status,
+  div.safety-strip > div > p,
+  div.safety-strip > a,
+  div.cta-coordinates,
+  a.footer-brand,
+  footer.footer > span { font-size: 11px !important; }
+}
+@media (pointer: coarse) {
+  div.quick-install-head > a,
+  div.safety-strip > a,
+  a.footer-brand,
+  nav.main-nav > a,
+  a.github-link { min-height: 24px; min-width: 24px; }
+}
+/* Mobile floor (phones + tablets): readable text and finger-sized targets.
+   Generated per range from what renders under 11px / 24px; desktop untouched. */
+@media (max-width: 600px) {
+  #installCommand,
+  div.terminal-footer > code { font-size: 11px !important; }
+}
+@media (min-width: 601px) and (max-width: 860px) {
+  #installCommand,
+  div.terminal-footer > code { font-size: 11px !important; }
+}
+@media (min-width: 861px) and (max-width: 1024px) {
+  #installCommand,
+  div.terminal-footer > code { font-size: 11px !important; }
+}
+/* Layout fixes: phones and tablets only; laptops and desktops untouched. */
+@media (max-width: 1024px) {
+  /* Mobile first: nothing may make the page wider than the screen.
+     Grid/flex columns may shrink below their widest line; code scrolls in place. */
+  pre { max-width: 100%; overflow-x: auto; }
+  img, video { max-width: 100%; height: auto; }
+  div > * { min-width: 0; }
+  /* Long paths and URLs in inline code may break anywhere instead of widening the page. */
+  :not(pre) > code { overflow-wrap: anywhere; }
+  /* Phones: the header's action group may shrink instead of pushing 3px past the edge. */
+  @media (max-width: 600px) { .header-actions { min-width: 0; flex-shrink: 1; } .topbar { gap: 8px; } }
+}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
